@@ -1,10 +1,20 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './Navbar';
+import Home from './Home';
+import About from './About';
+import Blog from './Blog';
 
 function App() {
   return (
-    <div className="app">
-      <h1>Hello World!</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/blog' component={Blog} />
+      </Switch>
+    </Router>
   );
 }
 
